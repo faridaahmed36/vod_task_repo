@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Task</title>
+    <link rel="stylesheet" href="{% static 'css/add_task.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Add a New Task</h1>
+    </header>
+
+    <section class="task-form">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="id_title">Title:</label>
+                {{ form.title }}
+            </div>
+            <div class="form-group">
+                <label for="id_description">Description:</label>
+                {{ form.description }}
+            </div>
+            <div class="form-group">
+                <label for="id_start_date">Start Date:</label>
+                <input type="date" name="start_date" id="id_start_date" value="{{ form.start_date.value|default:'' }}" required>
+            </div>
+            <div class="form-group">
+                <label for="id_due_date">Due Date:</label>
+                <input type="date" name="due_date" id="id_due_date" value="{{ form.due_date.value|default:'' }}" required>
+            </div>
+            <div class="form-group">
+                <label for="id_status">Status:</label>
+                <select name="status" id="id_status" class="dropdown">
+                    <option value="Pending">Pending</option>
+                    <option value="Completed">Completed</option>
+                    <option value="Overdue">Overdue</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="id_completion_date">Completion Date:</label>
+                <input type="date" name="completion_date" id="id_completion_date" value="{{ form.completion_date.value|default:'' }}">
+            </div>
+            <button type="submit">Add Task</button>
+        </form>
+    </section>
+
+    <section class="task-list">
+        <a href="{% url 'taskpage' %}" class="back-btn">Back to Task List</a>
+    </section>
+</body>
+</html>

@@ -1,0 +1,183 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5; 
+    color: #333;  
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: #E60000;
+}
+
+
+
+header .logo-img {
+    max-height: 50px; 
+    width: auto;
+    
+}
+
+header h1 {
+    margin: auto;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+
+}
+
+/* Task Form Section */
+.task-form {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 800px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.task-form h2 {
+    color: #E60000; 
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    color: #555;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #E60000; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #b30000; 
+}
+
+/* Task List Section */
+.task-list {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 1000px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.task-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.task-list th, .task-list td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.task-list th {
+    background-color: #E60000; 
+    color: white;
+}
+
+.task-list tr:hover {
+    background-color: #f9f9f9;
+}
+
+.task-list td a {
+    color: #E60000; 
+    text-decoration: none;
+}
+
+.task-list td a:hover {
+    text-decoration: underline;
+}
+
+/* Logout Button */
+.logout {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.logout-btn {
+    background-color: #E60000; /* Vodafone Red */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.logout-btn:hover {
+    background-color: #b30000; /* Darker red for hover effect */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .task-form {
+        width: 95%;
+    }
+
+    .task-list {
+        width: 95%;
+    }
+
+    .task-list table {
+        font-size: 0.9rem;
+    }
+}
+
+.task-filter {
+    margin: auto;
+    width: 70%;
+}
+
+.task-filter label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.task-filter select {
+    padding: 5px;
+    font-size: 16px;
+}
+
+.subscription-btn {
+    background-color: #E60000; /* Same color as logout button */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 10px; /* Space between buttons */
+}
+
+.subscription-btn:hover {
+    background-color: #b30000; /* Darker red for hover effect */
+}
+

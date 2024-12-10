@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{% static 'images/vodlogo.jpg' %}" alt="Vodafone Logo" class="logo-img">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/signup/" class="nav-link">Sign Up</a></li>
+                <li><a href="/signin/" class="nav-link">Sign In</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <h2>Create Your Account</h2>
+
+            <form action="/signup/" method="post">
+                {% csrf_token %}
+                
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" placeholder="Create a username (Only Letters and Numbers)" required>
+                
+                <label for="email">Email Address</label>
+                <input type="email" name="email" id="email" placeholder="Enter Your Email Address" required>
+                
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="Create a Password" required>
+                
+                <label for="confirm_password">Confirm Your Password</label>
+                <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Your Password" required>
+                
+                <button type="submit">Sign Up</button>
+            </form>
+            
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Vodafone Task. All rights reserved.</p>
+    </footer>
+</body>
+</html>
